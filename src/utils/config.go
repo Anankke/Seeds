@@ -26,9 +26,13 @@ func GetConfig() *viper.Viper {
 	c.SetDefault("redis.password", "password")
 
 	c.SetDefault("cacheTTL", 60)
+	c.RegisterAlias("cachettl", "cacheTTL")
 	c.SetDefault("verifyKey", "Hello")
+	c.RegisterAlias("verifykey", "verifyKey")
 	c.SetDefault("modURL", true)
+	c.RegisterAlias("modurl", "modURL")
 	c.SetDefault("enableLogger", true)
+	c.RegisterAlias("enablelogger", "enableLogger")
 
 	replacer := strings.NewReplacer(".", "_")
 	c.SetEnvKeyReplacer(replacer)

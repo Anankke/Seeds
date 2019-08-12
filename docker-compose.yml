@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sspanel
+      MYSQL_DATABASE: sspanel
+      MYSQL_USER: sspanel
+      MYSQL_PASSWORD: sspanel
+
+  redis:
+    image: redis:5
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+  seeds:
+    depends_on:
+      - db
+      - redis
+    image: seeds
+    ports:
+      - "8082:8080"
+    restart: always
+    environment:
+      GIN_MODE: release
+      DATABASE_HOST: db
+      DATABASE_USER: sspanel
+      DATABASE_PASS: sspanel
+      DATABASE_NAME: sspanel
+      REDIS_HOST: redis
+      REDIS_ENABLEAUTH: "false"
+      VERIFYKEY: musdfsf123
+volumes:
+  db_data: {}
+  redis-data: {}

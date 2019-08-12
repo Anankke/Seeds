@@ -5,9 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/CloudHammer/Seeds/src/utils"
-
-	"github.com/CloudHammer/Seeds/src/models"
+	"Seeds/src/models"
+	"Seeds/src/utils"
 	"github.com/gin-gonic/gin"
 )
 

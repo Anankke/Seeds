@@ -1,10 +1,9 @@
 package router
 
 import (
-	"net/http"
-
-	"github.com/CloudHammer/Seeds/src/utils"
+	"Seeds/src/utils"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 type routerAble interface {

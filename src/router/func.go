@@ -1,12 +1,11 @@
 package router
 
 import (
+	"Seeds/src/models"
+	"Seeds/src/utils"
+	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"
-
-	"github.com/CloudHammer/Seeds/src/models"
-	"github.com/CloudHammer/Seeds/src/utils"
-	"github.com/gin-gonic/gin"
 )
 
 type FunctionRouter struct {

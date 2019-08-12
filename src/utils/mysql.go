@@ -3,9 +3,7 @@ package utils
 import (
 	"log"
 	"sync"
-
-	"github.com/CloudHammer/Seeds/src/models"
-
+	"Seeds/src/models"
 	"github.com/jinzhu/gorm"
 )
 
