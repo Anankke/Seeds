@@ -1,15 +1,15 @@
 package models
 
 type Relay struct {
-  Id           int64  `json:"id";gorm:"column:id;NOT NULL;PRIMARY KEY;"`
-  UserId       int64  `json:"user_id";gorm:"column:user_id;NOT NULL;"`
-  SourceNodeId int64  `json:"source_node_id";gorm:"column:source_node_id;NOT NULL;"`
-  DistNodeId   int64  `json:"dist_node_id";gorm:"column:dist_node_id;NOT NULL;"`
-  DistIp       string `json:"dist_ip";gorm:"column:dist_ip;NOT NULL;type:text;"`
-  Port         int    `json:"port";gorm:"column:port;NOT NULL;"`
-  Priority     int    `json:"priority";gorm:"column:priority;NOT NULL;"`
+	Id           int64  `gorm:"column:id;NOT NULL;PRIMARY KEY;" json:"id";`
+	UserId       int64  `gorm:"column:user_id;NOT NULL;" json:"user_id";`
+	SourceNodeId int64  `gorm:"column:source_node_id;NOT NULL;" json:"source_node_id";`
+	DistNodeId   int64  `gorm:"column:dist_node_id;NOT NULL;" json:"dist_node_id";`
+	DistIp       string `gorm:"column:dist_ip;NOT NULL;type:text;" json:"dist_ip";`
+	Port         int    `gorm:"column:port;NOT NULL;" json:"port";`
+	Priority     int    `gorm:"column:priority;NOT NULL;" json:"priority";`
 }
 
 func (Relay) TableName() string {
-  return "relay"
+	return "relay"
 }
